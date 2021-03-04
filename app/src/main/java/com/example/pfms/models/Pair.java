@@ -1,5 +1,9 @@
 package com.example.pfms.models;
 
+/**
+ * This class holds key value pairs
+ * @author zarif
+ */
 public class Pair {
 
     private String key;

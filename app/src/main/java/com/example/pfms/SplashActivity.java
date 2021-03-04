@@ -8,14 +8,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pfms.database.DataBaseHelper;
 
+/**
+ * Initial activity that serves a temporary splash screen
+ * @author zarif
+ */
 public class SplashActivity extends AppCompatActivity {
 
     DataBaseHelper db;
-
-    /** Duration of wait **/
     final int SPLASH_DISPLAY_LENGTH = 1000;
 
-    /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);

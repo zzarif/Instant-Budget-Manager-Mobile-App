@@ -25,7 +25,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import static com.example.pfms.notification.App.CHANNEL_1_ID;
 
-
+/**
+ * This is the base activity that holds all the fragments and dialogs
+ * @author zarif
+ *
+ */
 public class MainActivity extends AppCompatActivity {
 
     private NotificationManagerCompat notificationManager;
@@ -80,6 +84,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             };
 
+    /**
+     * notifies the user on over expense
+     */
     public void sendOnChannel1() {
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID)
                 .setSmallIcon(R.drawable.ic_baseline_error_24)

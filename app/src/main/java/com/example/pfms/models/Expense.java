@@ -1,5 +1,9 @@
 package com.example.pfms.models;
 
+/**
+ * This class holds user expense data
+ * @author zarif
+ */
 public class Expense {
 
     String category;

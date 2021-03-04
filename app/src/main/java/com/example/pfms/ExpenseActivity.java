@@ -24,6 +24,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+/**
+ * Input activity to receive user expense data
+ * @author zarif
+ */
 public class ExpenseActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     TextView tvCurrDate, tvCurrTime;

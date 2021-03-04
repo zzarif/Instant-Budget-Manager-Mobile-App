@@ -16,6 +16,10 @@ import com.example.pfms.models.SingleDetail;
 
 import java.util.ArrayList;
 
+/**
+ * Activity that shows user history
+ * @author zarif
+ */
 public class HistoryActivity extends AppCompatActivity {
 
     RecyclerView rvHistory;

@@ -1,5 +1,9 @@
 package com.example.pfms.models;
 
+/**
+ * This class holds user information
+ * @author zarif
+ */
 public class User {
 
     private int id;

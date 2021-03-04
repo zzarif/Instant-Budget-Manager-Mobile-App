@@ -1,5 +1,9 @@
 package com.example.pfms.models;
 
+/**
+ * This class holds categorical data
+ * @author zarif
+ */
 public class Category {
     private String categoryTitle;
     private float expectedValue;

@@ -2,6 +2,10 @@ package com.example.pfms.models;
 
 import java.util.ArrayList;
 
+/**
+ * This class holds single row for history
+ * @author zarif
+ */
 public class SingleDetail {
 
     private String date;

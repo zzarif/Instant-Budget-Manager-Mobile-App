@@ -21,6 +21,10 @@ import com.example.pfms.R;
 import com.example.pfms.database.DataBaseHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+/**
+ * This fragment implements the home page
+ * @author zarif
+ */
 public class HomeFragment extends Fragment {
 
     FloatingActionButton btnAddExpense;
@@ -66,6 +70,10 @@ public class HomeFragment extends Fragment {
         });
     }
 
+    /**
+     * This function sets data to the interface on fragment creation
+     *
+     */
     @SuppressLint({"SetTextI18n", "DefaultLocale"})
     public void updateData () {
 

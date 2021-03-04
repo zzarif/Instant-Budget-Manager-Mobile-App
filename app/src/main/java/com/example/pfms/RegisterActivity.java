@@ -29,6 +29,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+/**
+ * Activity that prompts the user to register
+ * @author zarif
+ */
 public class RegisterActivity extends AppCompatActivity {
 
     EditText etUsername,etEmail,etInitCapital,etBudget,etPassword,etConfirmPassword;
@@ -121,6 +125,9 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Function that asks user to confirm registration
+     */
     private void showConfirmRegisterDialog() {
         AlertDialog dialog;
 
@@ -149,6 +156,10 @@ public class RegisterActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    /**
+     * Function that shows a dialog asking user to start the scheme
+     *
+     */
     private void showStartDialog () {
         AlertDialog dialog;
 

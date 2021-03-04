@@ -35,27 +35,32 @@ import com.example.pfms.models.User;
 // import Expense class
 
 /**
- * Please write javadoc for this class
+ * This is the class that implements the database
+ * @author Fida
+ * @author Muhammad
+ * @author Zarif
  */
 
 public class DataBaseHelper extends SQLiteOpenHelper {
 
     Context context;
 
+    /**
+     * Constructor for database initialization
+     * @param context the context of the activity
+     */
     public DataBaseHelper(@Nullable Context context) {
         super(context, "database.db", null, 3);
         this.context = context;
     }
 
+    /**
+     * This function creates the two tables user and exp
+     * @author Zarif and Fida
+     * @param db an SQLiteDatabase object
+     */
     @Override
     public void onCreate(SQLiteDatabase db) {
-
-        /**
-         * This function creates the two tables user and exp
-         * @author Zarif and Fida
-         * @param an SQLiteDatabase
-         */
-
         //Create table tb_user (id_user integer primary key, name_user text, passwd text,init_capital real,budget real);
         String CREATE_TB_USER = String.format("Create table %s (%s integer primary key, %s text, %s text,%s real,%s real,%s text,%s text,%s integer);", Field.TB_USER, Field.ID_USER, Field.NAME_USER, Field.PASSWD_USER, Field.INIT_CAPITAL_USER, Field.BUDGET_USER, Field.START_DATE_USER, Field.EMAIL_USER, Field.LOGGED_IN_STATUS_USER);
 
@@ -72,6 +77,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * This function deletes all existing user
+     * and deletes corresponding expense data
+     * @author zarif
+     */
     public void dropUser () {
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -88,6 +98,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    /**
+     * This function creates a new user
+     * @author Zarif
+     * @author Muhammad
+     * @param user a User object
+     */
     public void createUser (User user) {
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -114,6 +130,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    /**
+     * This function marks the entry date of the user
+     * @author Zarif
+     * @param startDate a String type date
+     */
     public void setUserStartDate (String startDate) {
 
 
@@ -131,6 +152,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * This function sets a new initial capital
+     * @author Zarif
+     * @param value a float representing the new capital
+     */
     public void setUserNewCapital (float value) {
 
 
@@ -148,6 +174,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+
+    /**
+     * This function sets a new budget
+     * @author Zarif
+     * @param value a float representing the new budget
+     */
     public void setUserNewBudget (float value) {
 
 
@@ -165,6 +197,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * This function checks if the user is logged in
+     * @author Zarif
+     * @return 0/1 based on condition
+     * 1 refers to logged in
+     * 0 refers to not logged in
+     */
     public boolean isLoggedIn () {
 
         try {
@@ -191,6 +230,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * This function sets the user logged in
+     * @author Zarif
+     *
+     */
     public void setUserLoggedIn () {
 
 
@@ -208,6 +252,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * This function sets the user logged out
+     * @author Zarif
+     *
+     */
     public void setUserLoggedOut () {
 
 
@@ -225,6 +274,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * This function fetches user's email address
+     * @author Zarif
+     * @return email address a String
+     */
     public String fetchMail () {
 
         String mail = " ";
@@ -251,6 +305,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return mail;
     }
 
+    /**
+     * This function fetches username
+     * @author Zarif
+     * @return username a String
+     */
     public String fetchUsername () {
 
         String mail = " ";
@@ -275,7 +334,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return mail;
     }
 
-
+    /**
+     * This function adds a new expense
+     * @author Muhammad
+     *
+     */
     public void addExpense (Expense expense)
     {
 
@@ -299,6 +362,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * This function checks if user has started his tracking scheme
+     * @author Zarif
+     * @return 0/1
+     * 1 refers to started
+     * 0 refers to has not started
+     */
     public boolean hasUserStarted () {
 
         try {
@@ -327,6 +397,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return false;
     }
 
+    /**
+     * This function checks if any user is available on the device
+     * @author Zarif
+     * @return 0/1
+     * 1 refers to available
+     * 0 refers to not available
+     */
     public boolean isAnyUserAvailable () {
 
         try {
@@ -352,6 +429,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return false;
     }
 
+    /**
+     * This function verifies the user
+     * @author Muhammad
+     * @param user a User object
+     * @return 0/1
+     * 1 refers to verified
+     * 0 refers to not verified
+     */
     public boolean verifyUser (User user) {
         try {
 
@@ -396,6 +481,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return false;
     }
 
+    /**
+     * This function fetches passed days of the tracking scheme
+     * @author Fida
+     * @return number of passed days as an integer
+     */
     public int fetchPassedDays () {
 
         try {
@@ -460,27 +550,24 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 //
 //    }
 
+    /**
+     * This function fetches remaining days of the tracking scheme
+     * @author Fida
+     * @return number of remaining days as an integer
+     */
     public int fetchRemainingDays() {
-        /**
-         *	This function returns the number of days to reach the end of the month
-         *	All months are 30 days long
-         *    @author Fida
-         *    @return the number of days remainings
-         */
         if (fetchPassedDays()>30) {
             return 0;
         }
         return 30 - fetchPassedDays();
     }
 
+    /**
+     * This function fetches total debit
+     * @author Fida
+     * @return total debit as a floating point
+     */
     public float fetchTotalDebit() {
-
-        /**
-         *	This function returns the total amount of debit by summing all expenses in sha Allah
-         *    @author Fida
-         *    @return the total debit as a floating point
-         *
-         */
 
         try {
             //Select Sum(amount) from tb_exp;
@@ -510,13 +597,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * This function fetches distinct debit for each category
+     * @author Fida
+     * @return list of pairs representing distinct sum by category
+     */
     public ArrayList<Pair> fetchTotalDebitByCategory() {
-
-        /**
-         *	This function returns a map of (date,debit) pairs where debit is the amount spent on that day
-         *    @author Fida
-         *    @return Map<String, Float> of type HashMap (Date,Debit) pairs
-         */
 
         try {
             // Query = Select date,Sum(amount) from tb_exp group by date ;
@@ -546,13 +632,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * This function fetches history
+     * @author Zarif
+     * @return list of pairs representing dates for each each expense
+     */
     public ArrayList<Pair> fetchHistory() {
-
-        /**
-         *	This function returns a map of (date,debit) pairs where debit is the amount spent on that day
-         *    @author Fida
-         *    @return Map<String, Float> of type HashMap (Date,Debit) pairs
-         */
 
         try {
             // Query = Select date,Sum(amount) from tb_exp group by date ;
@@ -582,6 +667,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * This function fetches the budget
+     * @author Fida
+     * @return budget a float type variable
+     */
     public float fetchBudget () {
 
         try {
@@ -608,17 +698,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     *	This function returns the Required Rate of Expenditure
+     *	RRE=(Budget-TotalDebit)/Remaining days
+     *	if budget>TotalDebit then 0 is returned
+     *
+     *    @author Fida
+     *    @return RRE as a floating point
+     */
     public float fetchRRE() {
 
-        /**
-         *	This function returns the Required Rate of Expenditure
-         *	RRE=(Budget-TotalDebit)/Remaining days
-         *	if budget>TotalDebit then 0 is returned
-         *
-         *    @author Fida
-         *    @return RRE as a floating point
-         *    @exception ArithemticException when Remaining days is zero
-         */
+
 
         try {
             //Query=Select budget from tb_user;
@@ -657,15 +747,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
 
 
+    /**
+     *	This function calculates the Current Rate of Expenditure
+     *	CRE=TotalDebit/PassedDays
+     *
+     *    @author Fida
+     *    @return CRE as a floating point
+     */
     public float fetchCRE() {
-        /**
-         *	This function calculates the Current Rate of Expenditure
-         *	CRE=TotalDebit/PassedDays
-         *
-         *    @author Fida
-         *    @return CRE as a floating point
-         *    @exception ArithmeticException when passed days is zero
-         */
 
         return fetchTotalDebit() / (fetchPassedDays()+1);
     }
@@ -695,15 +784,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return false;
     }
 
+    /**
+     *	This function returns the category/s which has the most expenses, if there are more than one all of them are returned in sha Allah
+     *
+     *    @author Fida
+     *    @return List<String> which has the names of the category/s
+     *
+     */
     public List<String> fetchTopCategories() {
-
-        /**
-         *	This function returns the category/s which has the most expenses, if there are more than one all of them are returned in sha Allah
-         *
-         *    @author Fida
-         *    @return List<String> which has the names of the category/s
-         *
-         */
 
 
         try {
@@ -743,15 +831,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return null;
     }
 
+    /**
+     *	This function returns the amount of savings expected at the end of the month if the RRE remains the same till the end of the month
+     *	ExpectedSavings=intitialCapital-totalDebit+CRE*remainingDays
+     *
+     *    @author Fida
+     *    @return expected savings as a floating point
+     */
     public float fetchExpectedSavings() {
-
-        /**
-         *	This function returns the amount of savings expected at the end of the month if the RRE remains the same till the end of the month
-         *	ExpectedSavings=intitialCapital-totalDebit+CRE*remainingDays
-         *
-         *    @author Fida
-         *    @return expected savings as a floating point
-         */
 
         try {
             // Query= select init_capital from tb_user;
@@ -771,7 +858,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             cursor.close();
             db.close();
 
-            Log.d("Zarif save save 122", Float.toString(initialCapital - fetchTotalDebit() - (fetchCRE() * fetchRemainingDays())));
+//            Log.d("Zarif save save 122", Float.toString(initialCapital - fetchTotalDebit() - (fetchCRE() * fetchRemainingDays())));
 
             return initialCapital - fetchTotalDebit() - (fetchCRE() * fetchRemainingDays());
 
@@ -784,7 +871,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
-
+    /**
+     * This function checks whether user is surpassing his budget
+     * @author Fida
+     * @return 0/1
+     * 1 refers to not surpassing
+     * 0 refers to surpassing
+     */
     public boolean fetchRemarks() {
         return fetchCRE() <= fetchRRE();
     }

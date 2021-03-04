@@ -20,6 +20,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+/**
+ * Activity that presents a login prompt to the user
+ * @author zarif
+ */
 public class LoginActivity extends AppCompatActivity {
 
     EditText etUsername;
@@ -71,7 +75,10 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-
+    /**
+     * Function that shows a dialog asking user to start the scheme
+     *
+     */
     private void showStartDialog () {
         AlertDialog dialog;
 

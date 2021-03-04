@@ -15,6 +15,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pfms.database.DataBaseHelper;
 
+/**
+ * Activity that serves user with editing utilities
+ * @author zarif
+ */
 public class EditActivity extends AppCompatActivity {
 
     EditText etNewCapital, etNewBudget;

@@ -14,6 +14,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pfms.database.DataBaseHelper;
 
+/**
+ * Activity that provides money transaction utilities
+ * @author zarif
+ */
 public class TransactActivity extends AppCompatActivity {
 
     EditText etNewCapital, etNewBudget;

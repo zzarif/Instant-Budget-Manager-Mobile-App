@@ -2,6 +2,10 @@ package com.example.pfms.models;
 
 import androidx.annotation.NonNull;
 
+/**
+ * This class holds database table and field identifiers
+ * @author zarif
+ */
 public class Field {
 
     public static String TB_USER = "tb_user";

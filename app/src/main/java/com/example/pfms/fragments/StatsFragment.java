@@ -26,6 +26,10 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 
+/**
+ * This fragment implements graphical stats, pie chart
+ * @author zarif
+ */
 public class StatsFragment extends Fragment {
 
     PieChart pieChart;

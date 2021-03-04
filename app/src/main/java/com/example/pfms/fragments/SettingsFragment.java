@@ -23,6 +23,10 @@ import com.example.pfms.RegisterActivity;
 import com.example.pfms.TransactActivity;
 import com.example.pfms.database.DataBaseHelper;
 
+/**
+ * This fragment implements the settings page
+ * @author zarif
+ */
 public class SettingsFragment extends Fragment {
 
     LinearLayout llEdit,llHistory, llLogOut, llExport, llTransact;
@@ -88,6 +92,10 @@ public class SettingsFragment extends Fragment {
         });
     }
 
+    /**
+     * This function asks user for log out confirmation
+     *
+     */
     private void showConfirmLogOutDialog() {
         AlertDialog dialog;
 

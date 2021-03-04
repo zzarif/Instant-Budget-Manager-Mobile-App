@@ -15,6 +15,11 @@ import com.example.pfms.models.SingleDetail;
 
 import java.util.ArrayList;
 
+/**
+ * This is an adapter class to attach list of expense data
+ * to the history activity
+ * @author zarif
+ */
 public class DetailsAdapter extends Adapter<DetailsAdapter.MyViewHolder> {
 
         ArrayList<Pair> details;
