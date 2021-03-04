@@ -467,7 +467,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          *    @author Fida
          *    @return the number of days remainings
          */
-
+        if (fetchPassedDays()>30) {
+            return 0;
+        }
         return 30 - fetchPassedDays();
     }
 

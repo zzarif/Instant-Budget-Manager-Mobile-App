@@ -1,6 +1,7 @@
 package com.example.pfms;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -8,12 +9,14 @@ import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
 import android.app.Notification;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.pfms.Utils.MyDialog;
 import com.example.pfms.database.DataBaseHelper;
 import com.example.pfms.fragments.StatsFragment;
 import com.example.pfms.fragments.HomeFragment;
@@ -39,12 +42,15 @@ public class MainActivity extends AppCompatActivity {
         notificationManager = NotificationManagerCompat.from(this);
         db = new DataBaseHelper(this);
 
+        if (db.fetchRemainingDays()<=0) {
+            new MyDialog(this, db.fetchRemarks()).show();
+        }
+
         if (!db.fetchRemarks()) {
             sendOnChannel1();
 //            sendMail();
         }
 
-        //I added this if statement to keep the selected fragment when rotating the device
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fl_fragment,new HomeFragment()).commit();
         }
@@ -85,18 +91,18 @@ public class MainActivity extends AppCompatActivity {
         notificationManager.notify(1, notification);
     }
 
-    public void sendMail () {
-        Intent i = new Intent(Intent.ACTION_SEND);
-        i.setType("message/rfc822");
-        i.putExtra(Intent.EXTRA_EMAIL  , new String[]{db.fetchMail()});
-        i.putExtra(Intent.EXTRA_SUBJECT, "Exceeding");
-        i.putExtra(Intent.EXTRA_TEXT   , "Your Current Rate of Expense is surpassing Required Rate");
-        try {
-            startActivity(Intent.createChooser(i, "Send mail..."));
-        } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(MainActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
-        }
-    }
+//    public void sendMail () {
+//        Intent i = new Intent(Intent.ACTION_SEND);
+//        i.setType("message/rfc822");
+//        i.putExtra(Intent.EXTRA_EMAIL  , new String[]{db.fetchMail()});
+//        i.putExtra(Intent.EXTRA_SUBJECT, "Exceeding");
+//        i.putExtra(Intent.EXTRA_TEXT   , "Your Current Rate of Expense is surpassing Required Rate");
+//        try {
+//            startActivity(Intent.createChooser(i, "Send mail..."));
+//        } catch (android.content.ActivityNotFoundException ex) {
+//            Toast.makeText(MainActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
     @Override
     protected void onResume() {
