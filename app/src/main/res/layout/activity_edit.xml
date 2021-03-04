@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tv_init_capital"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="New Initial Capital" />
+
+    <EditText
+        android:id="@+id/et_set_init_capital"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="15000.00"
+        android:layout_below="@+id/tv_init_capital"
+        android:background="@drawable/register_input"
+        android:layout_marginBottom="16dp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/tv_new_budget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_set_init_capital"
+        android:layout_marginBottom="4dp"
+        android:text="New Budget" />
+
+    <EditText
+        android:id="@+id/et_new_budget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_new_budget"
+        android:inputType="numberDecimal"
+        android:background="@drawable/register_input"
+        android:hint="10000.00"
+        android:layout_marginBottom="16dp"
+        android:padding="8dp" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_below="@+id/et_new_budget"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:padding="8dp"
+        android:text="Save"
+        android:textAllCaps="true"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_below="@+id/et_new_budget"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/btn_save"
+        android:padding="8dp"
+        android:text="Cancel"
+        android:layout_marginEnd="8dp"
+        android:textAllCaps="true"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

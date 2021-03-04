@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tv_init_capital"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="Account No." />
+
+    <EditText
+        android:id="@+id/et_set_init_capital"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_init_capital"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/register_input"
+        android:hint="4178****"
+        android:inputType="numberDecimal"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/tv_new_budget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_set_init_capital"
+        android:layout_marginBottom="4dp"
+        android:text="Amount" />
+
+    <EditText
+        android:id="@+id/et_new_budget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_new_budget"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/register_input"
+        android:hint="5000.00"
+        android:inputType="numberDecimal"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/tv_send_money"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_new_budget"
+        android:layout_marginBottom="4dp"
+        android:text="Select Client" />
+
+    <GridLayout
+        android:id="@+id/gl_client"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_send_money"
+        android:columnCount="2"
+        android:layout_marginBottom="8dp">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:elevation="5dp"
+            android:background="#eaeaea"
+            android:src="@drawable/bkash"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:elevation="5dp"
+            android:background="#eaeaea"
+            android:src="@drawable/nogod"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:elevation="5dp"
+            android:background="#eaeaea"
+            android:src="@drawable/rocketx"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            android:elevation="5dp"
+            android:background="#eaeaea"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_more_24"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Others"/>
+
+        </LinearLayout>
+
+
+    </GridLayout>
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_below="@+id/gl_client"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="8dp"
+            android:layout_marginHorizontal="8dp"
+            android:text="Send"
+            android:textAllCaps="true"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_below="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Cancel"
+            android:layout_marginHorizontal="8dp"
+            android:textAllCaps="true"
+            android:textColor="@color/white" />
+
+
+</RelativeLayout>

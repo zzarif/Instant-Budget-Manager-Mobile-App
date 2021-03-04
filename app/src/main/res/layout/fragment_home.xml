@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_budget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/font_comfortaa_one"
+                android:text="8500.00"
+                android:textStyle="bold"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_budget_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_budget"
+                android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/font_ropa_sans"
+                android:layout_marginHorizontal="16dp"
+                android:text="Budget"
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
+
+
+            <TextView
+                android:id="@+id/tv_total_debit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/font_comfortaa_one"
+                android:text="2650.00"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_total_debit_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_total_debit"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/font_ropa_sans"
+                android:layout_marginHorizontal="16dp"
+                android:text="Total Debit"
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl_progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_budget"
+                android:layout_centerHorizontal="true">
+
+                <ProgressBar
+                    android:id="@+id/pbProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_centerInParent="true"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/home_progress_bar"
+                    android:secondaryProgress="0" />
+
+
+                <TextView
+                    android:id="@+id/tvRemDays"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/concert_one_regular"
+                    android:text="27"
+                    android:textColor="@color/white"
+                    android:textSize="36sp" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/tvProgressTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_progress_bar"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/ropa_sans_regular"
+                android:layout_marginBottom="20dp"
+                android:text="Days Remaining"
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="530dp"
+                android:layout_alignParentBottom="true"
+                android:background="#98afc7" />
+
+            <LinearLayout
+                android:id="@+id/rl_rre"
+                android:layout_width="130dp"
+                android:layout_height="180dp"
+                android:layout_below="@id/tvProgressTitle"
+                android:background="@drawable/home_short_stats_back"
+                android:elevation="15dp"
+                android:gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ropa_sans_regular"
+                    android:text="RRE"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ropa_sans_regular"
+                    android:gravity="center"
+                    android:text="Required Rate\nof Expense"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_rre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/concert_one_regular"
+                    android:text="350.00"
+                    android:textColor="@color/black"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_cre"
+                android:layout_width="130dp"
+                android:layout_height="180dp"
+                android:layout_below="@id/tvProgressTitle"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/home_short_stats_back"
+                android:elevation="15dp"
+                android:gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ropa_sans_regular"
+                    android:text="CRE"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ropa_sans_regular"
+                    android:gravity="center"
+                    android:text="Current Rate\nof Expense"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_cre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/concert_one_regular"
+                    android:text="345.00"
+                    android:textColor="@color/black"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_savings"
+                android:layout_width="130dp"
+                android:layout_height="180dp"
+                android:layout_below="@id/rl_rre"
+                android:background="@drawable/home_short_stats_back"
+                android:elevation="15dp"
+                android:gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/tv_savings_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ropa_sans_regular"
+                    android:text="Savings"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ropa_sans_regular"
+                    android:gravity="center"
+                    android:text="Projected at\n Current Rate"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_savings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/concert_one_regular"
+                    android:text="1505.00"
+                    android:textColor="@color/black"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_top_cat"
+                android:layout_width="130dp"
+                android:layout_height="180dp"
+                android:layout_below="@id/ll_cre"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/home_short_stats_back"
+                android:elevation="15dp"
+                android:gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ropa_sans_regular"
+                    android:text="TOP CAT."
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ropa_sans_regular"
+                    android:gravity="center"
+                    android:text="Category with\n Most Expense"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_top_cat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_ropa_sans"
+                    android:text="Apparel"
+                    android:textColor="@color/black"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_remarks"
+                android:layout_width="130dp"
+                android:layout_height="180dp"
+                android:layout_below="@id/ll_savings"
+                android:background="@drawable/home_short_stats_back"
+                android:elevation="15dp"
+                android:gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ropa_sans_regular"
+                    android:text="Remarks"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ropa_sans_regular"
+                    android:gravity="center"
+                    android:text="On Your\nProgress"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_remarks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_ropa_sans"
+                    android:text="Good"
+                    android:textColor="@color/black"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:id="@+id/iv_remarks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_check_24"/>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_add_expense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/home_fab_add_ic" />
+
+</RelativeLayout>

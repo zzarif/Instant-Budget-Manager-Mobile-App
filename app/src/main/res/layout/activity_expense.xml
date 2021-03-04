@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tv_curr_date"
+        android:background="@drawable/login_pfms_back"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dancing_script"
+            android:gravity="center"
+            android:text="Personal Finance"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/dancing_script"
+            android:gravity="center"
+            android:text="and"
+            android:layout_marginTop="-8dp"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dancing_script"
+            android:gravity="center"
+            android:layout_marginTop="-8dp"
+            android:text="Budget Management"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_date_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_curr_date"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="14dp"
+        android:text="Date"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tv_curr_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/et_amount"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:layout_toEndOf="@+id/tv_date_title"
+        android:background="@drawable/register_btn_cancel"
+        android:padding="8dp"
+        android:text="27-08-2020"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tv_curr_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/et_amount"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/tv_curr_date"
+        android:background="@drawable/register_btn_cancel"
+        android:padding="8dp"
+        android:text="7:30 AM"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tv_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_curr_date"
+        android:layout_alignBaseline="@+id/et_amount"
+        android:layout_marginStart="14dp"
+        android:text="Amount"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/et_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginVertical="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="14dp"
+        android:layout_toEndOf="@id/tv_amount"
+        android:background="@drawable/register_input"
+        android:hint="250.00"
+        android:inputType="numberDecimal"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/tv_select_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_amount"
+        android:layout_alignBaseline="@+id/sp_categories"
+        android:layout_marginStart="14dp"
+        android:text="Select Category"
+        android:textColor="@color/black" />
+
+    <Spinner
+        android:id="@+id/sp_categories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_amount"
+        android:layout_marginVertical="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="14dp"
+        android:layout_toEndOf="@+id/tv_select_category" />
+
+    <Button
+        android:id="@+id/btn_save_expense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sp_categories"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Add"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_cancel_expense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sp_categories"
+        android:layout_margin="8dp"
+        android:layout_toStartOf="@id/btn_save_expense"
+        android:text="Cancel"
+        android:textColor="@color/white" />
+
+
+</RelativeLayout>
